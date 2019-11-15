@@ -15,7 +15,6 @@ const Container = styled.div`
 export default function Header() {
 	return (
 		<Container>
-        
 			<Toolbar >
 				<Grid container spacing={3} >
 					<Grid item xs>
