@@ -7,7 +7,7 @@ export const problems = [
     {
         "id":"113",
         "title": "Sum of left diagonal of 2D array",
-        "difficulty": "Medium",
+        "difficulty": "Easy",
     },
     {
         "id":"224",
