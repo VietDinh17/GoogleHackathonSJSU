@@ -8,7 +8,7 @@ const RouteHandler = () => (
     <Switch>
         <Route exact path='/' component={Home} />
         <Route path='/test' component={Test}/>
-        <Route exact path='/views/Problem' component={Problem} />
+        <Route path='/problem' component={Problem} />
         
     </Switch>
 )

@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 
 import styled from 'styled-components';
 
+import { problems } from '../constants/mockdata';
+import { element } from 'prop-types';
+
 const ContainerTitle = styled.h2`
     text-align: center;
     font-size: 23px;
@@ -39,93 +42,80 @@ const NextBtn = styled.button`
 
 
 export class Problem extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state = {value: ''};
+        this.state = { value: '', problem: this.props.location.state };
 
         this.handleSubmitBtn = this.handleSubmitBtn.bind(this);
     }
-    handleSubmitBtn(event){
+    handleSubmitBtn(event) {
         console.log("handleSubmitBtn clicked");
-        this.setState({value: event.target.value});
+        this.setState({ value: event.target.value });
 
         var userSols = []
-        for(var i = 0; i < currProblem.code.length - 1; i++){
+        for (var i = 0; i < this.state.problem.val.code.length - 1; i++) {
             var inputName = 'blank' + i;
             userSols.push(document.getElementById(inputName).value)
         }
-        
-        for(var j = 0; j < userSols.length; j++){
+
+        for (var j = 0; j < userSols.length; j++) {
             var str1 = userSols[j];
-            var str2 = currProblem.ans[j];
+            var str2 = this.state.problem.val.ans[j];
             var n = str1.localeCompare(str2);
-            if(n === 0){
+            if (n === 0) {
                 alert('Correct!!')
                 return;
-            }else{
+            } else {
                 alert("Incorrect!!!")
                 return;
             }
         }
-       
+
     }
     render() {
-       
+
         return (
-            
+
             <div>
-            <ContainerTitle>
-            Reverse an Array
+                <ContainerTitle>
+                    Reverse an Array
             </ContainerTitle>
-            
-            
-                <br></br>
-                <br></br>
-               <CodeBox className='codebox'>
-                
-               <pre id={'displayCode'}>
-                    {currProblem.code.map((value, index) => {
-                        return (
-                            <span key={index}>{value}<input id={'blank'+index}></input></span>
-                            
-                        )
-                        
-                    })}
 
 
-                </pre> 
-                
-               </CodeBox>
-               <NextBtn type={'submit'} onClick={this.handleNextBtn}>Next</NextBtn>
-               <SubmitBtn type={'submit'} onClick={this.handleSubmitBtn}>Submit</SubmitBtn>
+                <br></br>
+                <br></br>
+                <CodeBox className='codebox'>
+
+                    <pre id={'displayCode'}>
+                        {this.state.problem.val.code.map((value, index) => {
+                            if(index <this.state.problem.val.code.length - 1){
+                                return (
+                                    <span key={index}>{value}<input id={'blank' + index}></input></span>
+    
+                                )
+                            }else{
+                                return(
+                                    <span key={index}>{value}</span>
+                                )
+                            }
+
+                        })}
+
+
+                    </pre>
+
+                </CodeBox>
+                <SubmitBtn type={'submit'} onClick={this.handleSubmitBtn}>Submit</SubmitBtn>
 
             </div>
-            
+
         )
-    
+
     }
 
 
 }
 
 
-
-const currProblem = {
-    "id" : "1",
-    
-    "code":[ `int[] array = new array[]{1, 2, 3, 4, 5};
-for(int i = 0; i < `,
-     `; i++) {	
-    int temp = array[i];
-    array[i]   = array[array.length - i - 1]; 	
-    array[array.length - i - `,
-    ` ] = temp; 
-}`],
-    "ans": ['array.length', '1']
-
-}
-
-
-   
 
 export default Problem

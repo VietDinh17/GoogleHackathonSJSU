@@ -27,9 +27,9 @@ const ProblemList = () => {
         <CustomList>
             {problems.map(value => {
                 return (
-                    <Link to={{pathname: '/test',
+                    <Link to={{pathname: '/problem',
                         state:{
-                        id: value.id
+                        val: value
                     }}} key={value.id} style={{ textDecoration: 'none' }}>
                         <Button >
                             <Grid container direction="row" justify="center" alignItems="flex-start">
