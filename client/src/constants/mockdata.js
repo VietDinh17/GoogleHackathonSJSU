@@ -3,7 +3,7 @@ export const problems = [
         "id":"112",
         "title": "Reverse an Array",
         "difficulty": "Easy",
-        "code":[ `int[] array = new array[]{1, 2, 3, 4, 5};
+        "code":[ `        int[] array = new array[]{1, 2, 3, 4, 5};
 
         for(int i = 0; i < `,
         
@@ -24,7 +24,7 @@ export const problems = [
         "id":"113",
         "title": "Sum of left diagonal of 2D array",
         "difficulty": "Easy", 
-        "code":[ `int[][] array = new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        "code":[ `        int[][] array = new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 
         int sum = 0;
     
@@ -50,7 +50,7 @@ export const problems = [
         "id":"224",
         "title": "Binary Search (Recursive)",
         "difficulty": "Medium",
-        "code":[ `int binarySearch(int arr[], int left, int right, int key)  {
+        "code":[ `            int binarySearch(int arr[], int left, int right, int key)  {
 
             if (`,`) {
       
