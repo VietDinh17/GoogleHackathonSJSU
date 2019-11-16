@@ -104,7 +104,7 @@ export const problems = [
     
           array[j + 1] = key;
     
-        }`
+}`
     
       ],
     
@@ -114,7 +114,7 @@ export const problems = [
         "id":"311",
         "title": "Depth First Search of a Graph",
         "difficulty": "Hard",
-        "code":[ `int vertice;
+        "code":[ `        int vertice;
 
         LinkedList<Integer> adjacent[];
     
