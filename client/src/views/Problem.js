@@ -1,27 +1,17 @@
 import React, { Component } from 'react'
-
+import { Grid } from '@material-ui/core';
 import styled from 'styled-components';
 
-import { problems } from '../constants/mockdata';
-import { element } from 'prop-types';
-
 const ContainerTitle = styled.h2`
-    text-align: center;
     font-size: 23px;
 `;
 
 const CodeBox = styled.div`
-    position: absolute;
-    left: 20%;
-    right: 20%;
     font-size: 20px;
 `;
 
 const SubmitBtn = styled.button`
     type: submit;
-    position: absolute;
-    right: 0;
-    bottom: 0;
     font-size: 1em;
     margin: 1em;
     padding: 0.25em 1em;
@@ -77,36 +67,37 @@ export class Problem extends Component {
         return (
 
             <div>
-                <ContainerTitle>
-                    Reverse an Array
-            </ContainerTitle>
+                <Grid container direction="column" justify="center" alignItems="center">
+                    <Grid item xs={4}>
+                        <ContainerTitle>
+                            {this.state.problem.val.title}
+                        </ContainerTitle>
+                    </Grid>
+                    <Grid item xs={8}>
+                    <CodeBox className='codebox'>
 
+                        <pre id={'displayCode'}>
+                            {this.state.problem.val.code.map((value, index) => {
+                                if (index < this.state.problem.val.code.length - 1) {
+                                    return (
+                                        <span key={index}>{value}<input id={'blank' + index}></input></span>
 
-                <br></br>
-                <br></br>
-                <CodeBox className='codebox'>
+                                    )
+                                } else {
+                                    return (
+                                        <span key={index}>{value}</span>
+                                    )
+                                }
 
-                    <pre id={'displayCode'}>
-                        {this.state.problem.val.code.map((value, index) => {
-                            if(index <this.state.problem.val.code.length - 1){
-                                return (
-                                    <span key={index}>{value}<input id={'blank' + index}></input></span>
-    
-                                )
-                            }else{
-                                return(
-                                    <span key={index}>{value}</span>
-                                )
-                            }
+                            })}
 
-                        })}
-
-
-                    </pre>
-
-                </CodeBox>
-                <SubmitBtn type={'submit'} onClick={this.handleSubmitBtn}>Submit</SubmitBtn>
-
+                        </pre>
+                    </CodeBox>
+                    </Grid>
+                    <Grid item xs={2}>
+                        <SubmitBtn type={'submit'} onClick={this.handleSubmitBtn}>Submit</SubmitBtn>
+                    </Grid>
+                </Grid>
             </div>
 
         )
