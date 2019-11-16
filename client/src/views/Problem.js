@@ -53,6 +53,7 @@ export class Problem extends Component {
             str1 = str1.replace(/\s/g, '');
             console.log(str1)
             var str2 = this.state.problem.val.ans[j];
+            str2 = str2.replace(/\s/g, '');
             console.log(str2)
             var n = str1.localeCompare(str2);
             if (n !== 0) {
