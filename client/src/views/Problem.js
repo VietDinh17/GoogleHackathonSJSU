@@ -79,12 +79,12 @@ export class Problem extends Component {
                     </Grid>
 
                     <Grid>
-                        <button style={{ color: 'green', fontSize: '16px'}}>Java</button>
-                        <button style={{ color: 'green', fontSize: '16px' }}>&nbsp;|&nbsp;C++</button>
-                        <button style={{ color: 'green', fontSize: '16px' }}>&nbsp;|&nbsp;Python</button>
-                        <button style={{ color: 'green', fontSize: '16px' }}>&nbsp;|&nbsp;Javascript</button>
-                        <button style={{ color: 'green', fontSize: '16px'}}>&nbsp;|&nbsp;GO</button>
-                        <button style={{ color: 'green', fontSize: '16px'}}>&nbsp;|&nbsp;Ruby</button>
+                        <button style={{ color: 'green', fontSize: '16px'}}>Java</button>&nbsp;
+                        <button style={{ color: 'green', fontSize: '16px' }}>&nbsp;|&nbsp;C++</button>&nbsp;
+                        <button style={{ color: 'green', fontSize: '16px' }}>&nbsp;|&nbsp;Python</button>&nbsp;
+                        <button style={{ color: 'green', fontSize: '16px' }}>&nbsp;|&nbsp;Javascript</button>&nbsp;
+                        <button style={{ color: 'green', fontSize: '16px'}}>&nbsp;|&nbsp;GO</button>&nbsp;
+                        <button style={{ color: 'green', fontSize: '16px'}}>&nbsp;|&nbsp;Ruby</button>&nbsp;
                     </Grid>
 
                     <Grid item xs={8}>
