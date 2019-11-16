@@ -50,18 +50,21 @@ export class Problem extends Component {
 
         for (var j = 0; j < userSols.length; j++) {
             var str1 = userSols[j];
+            str1 = str1.replace(/\s/g, '');
+            console.log(str1)
             var str2 = this.state.problem.val.ans[j];
+            console.log(str2)
             var n = str1.localeCompare(str2);
-            if (n === 0) {
-                alert('Correct!!')
+            if (n !== 0) {
+                alert('Incorrect!!!!')
                 return;
-            } else {
-                alert("Incorrect!!!")
-                return;
-            }
+            } 
         }
 
+        alert("Correct!!!")
+
     }
+    
     render() {
 
         return (

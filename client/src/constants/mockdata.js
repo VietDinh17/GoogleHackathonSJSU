@@ -18,7 +18,7 @@ export const problems = [
             ` ] = temp; 
         
         }`],
-        "ans": ['array.length', '1']
+        "ans": ['array.length/2', '1']
     },
     {
         "id":"113",
